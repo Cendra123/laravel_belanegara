@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/artikel', 'artikel@index')->name('artikel');
+Route::get('/laguWajib', 'laguWajib@index')->name('laguWajib');
+Route::get('/materi', 'materi@index')->name('materi');
+Route::get('/permainan', 'permainan@index')->name('permainan');
+Route::get('/berita', 'berita@index')->name('berita');
