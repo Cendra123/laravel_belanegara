@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facedes\Auth;
+use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -36,54 +39,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-<<<<<<< HEAD
-=======
-public function postLogin(Request $request)
-{
-    // $this->validate($request, [
-    //     'email' => 'required|email', 'password' => 'required',
-    // ]);
-
-    // $credentials = $request->only('email', 'password');
-    // public function setPasswordAttribute($value)
+    // public function login(Request $request)
     // {
-    //     $this->attributes['password'] = bcrypt($value);
+    //    $user = User::where('username', $request->username)
+    //                 ->where('password',md5($request->password))
+    //                 ->first();
+    //    if($user){
+    //
+    //    }
+    //    Auth::login($user);
+    //    return redirect('/');
     // }
-    $this->validate($request, [
-            'name' => 'required|name', 'password' => 'required',
-        ]);
-
-        if ($this->auth->validate(['username' => $request->name, 'password' => md5($credentials['password']), 'status' => 0])) {
-            return redirect($this->loginPath())
-                ->withInput($request->only('username', 'remember'))
-                ->withErrors('Your account is Inactive or not verified');
-        }
-
-
-    if ($this->auth->attempt($credentials, $request->has('remember')))
-    {
-        /* Check if the user is Activated */
-        $userID = \Auth::user()->id;
-        $user = new \App\User;
-        $result = $user->isUserActivated($userID);
-
-        if($result[0]->status == 1)
-        {
-            return redirect()->intended($this->redirectPath());
-        }
-        else if($result[0]->status == 0)
-        {
-            Session::flash('alert-danger', 'Your account is not yet Activated.');
-            return Redirect::to('auth/login');
-        }
-
-    }
-
-    return redirect($this->loginPath())
-                ->withInput($request->only('username', 'remember'))
-                ->withErrors([
-                    'username' => $this->getFailedLoginMessage(),
-                ]);
-}
->>>>>>> theme
 }
