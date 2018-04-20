@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facedes\Auth;
+// use Illuminate\Support\Facedes\Auth;
+use Auth;
+use Illuminate\Contracts\Auth\Guard;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -39,8 +42,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    // public function login(Request $request)
-    // {
+    public function login(Request $request)
+    {
+      // dd($request->all());
+      if(Auth::attemp([
+        'username' => $request->username,
+        'password' => $request->password,
+      ])){
+        dd($user = User::where('username', $request->username)->first());
+      }
+
+
     //    $user = User::where('username', $request->username)
     //                 ->where('password',md5($request->password))
     //                 ->first();
@@ -49,5 +61,5 @@ class LoginController extends Controller
     //    }
     //    Auth::login($user);
     //    return redirect('/');
-    // }
+    }
 }
