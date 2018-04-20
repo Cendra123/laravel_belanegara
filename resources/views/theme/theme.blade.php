@@ -1,18 +1,19 @@
 
-<link rel="stylesheet" href="url('css/bootstrap.min.css')"/>
-<link rel="stylesheet" href="url('css/font-awesome.min.css')"/>
-<link rel="stylesheet" href="url('css/animate.min.css')"/>
-<link rel="stylesheet" href="url('css/lightbox.css')"/>
-<link rel="stylesheet" href="url('css/main.css')"/>
-<link rel="stylesheet" href="url('css/responsive.css')"/>
-<link rel="stylesheet" href="url('css/bootstrap.min.css')"/>
-<link rel="stylesheet" href="url('css/bootstrap.min.css')"/>
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/animate.min.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/lightbox.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/main.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/responsive.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"/>
 
-<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/jquery.isotope.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/lightbox.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/wow.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
+<script src="{{ asset('js/video.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('js/lightbox.min.js') }}"></script>
+<script src="{{ asset('js/wow.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
-<!-- $this->output->set_template('triangle'); -->
+<!-- $this->output->set_template('triangle');
+ -->

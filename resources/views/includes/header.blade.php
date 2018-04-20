@@ -35,7 +35,7 @@
 					<li><a href="{{ route('materi') }}"><b>Materi</b> </a></li>
 					<li><a href="{{ route('artikel') }}"><b>Artikel</b></a></li> 
 					<li><a href="{{ route('permainan') }}"><b>Permainan</b></a></li>
-					<li><!-- <a href=<!-- "http://www.belanegaraku.id/user-artikel/index.php/Login" -->><b> -->
+					<li>
 						<!-- Log In -->
 						@if (Route::has('login'))
 						<!-- <div class="top-right links"> -->
@@ -43,7 +43,7 @@
 							<a href="{{ url('/home') }}"><b>Home</b></a>
 							@else
 							<a href="{{ route('login') }}"><b>Login</b></a>
-							<a href="{{ route('register') }}"><b>Register</b></a>
+							<!-- <a href="{{ route('register') }}"><b>Register</b></a> -->
 							@endauth
 							<!-- </div> -->
 							@endif
@@ -53,4 +53,4 @@
 				</div>
 			</div>
 		</header>
-    <!--/#header
+    <!--/#header-->
