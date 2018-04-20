@@ -1,97 +1,191 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <section id="page-breadcrumb">
 
-        <!-- Styles -->
-        <!-- /*<style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        <div class="vertical-center sun">
 
-            .full-height {
-                height: 100vh;
-            }
+             <div class="container">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                <div class="row">
 
-            .position-ref {
-                position: relative;
-            }
+                    <div class="action">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                        <div class="col-sm-12">
 
-            .content {
-                text-align: center;
-            }
+                            <h1 class="title">Artikel</h1>
 
-            .title {
-                font-size: 84px;
-            }
+                            <!-- <p>Blog with right sidebar</p> -->
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+                        </div>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>*/ -->
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-          @include('includes.header')
-            <!-- @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif -->
+                    </div>
 
-            <div class="content">
-              <h1>artikel</h1>
-                <!-- <div class="title m-b-md">
-                    Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
             </div>
+
         </div>
-    </body>
-</html>
+
+   </section>
+
+    <!--/#action-->
+
+
+
+    <section id="blog" class="padding-top">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-5">
+
+                    <div class="sidebar blog-sidebar">
+
+                       
+
+                        <div class="sidebar-item categories">
+
+                            <h3 style="color: red;">Kategori Artikel</h3>
+
+                            <ul class="nav navbar-stacked">
+
+
+
+                            <?php
+
+                            foreach ($kategori_artikel as $row) {
+
+                                # code...
+
+                                $link = base_url().'index.php/artikel/list_artikel/'.$row->id_kategori_artikel;
+
+                                echo "<li>"."<a href='".$link."'>".$row->nama_kategori_artikel."</a>"."</li>";
+
+                            }
+
+                            ?>
+
+
+
+
+
+                            </ul>
+
+                        </div>
+
+                  
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-9 col-sm-7">
+
+                    <div class="row">
+
+
+
+                    <?php 
+
+
+
+                    if($list_artikel){
+
+                        foreach ($list_artikel as $row) {
+
+                            # code...
+
+                            $link = base_url().'index.php/artikel/detail_artikel/'.$row->id_artikel;
+
+                            $str = strip_tags($row->konten_artikel);
+
+
+
+                            //first parameter is $str
+
+                            //second parameter is the desired width
+
+                            //source : https://stackoverflow.com/questions/12130966/how-do-i-remove-p-tag-and-its-content-from-html-using-php
+
+
+
+                            $abstract_text = strtok(wordwrap($str, 200, "...\n"), "\n");
+
+
+
+                            echo '<div class="col-md-12 col-sm-12">
+
+                            <div class="single-blog two-column">
+
+                                <div class="post-thumb">
+
+                                    <a href="blogdetails.html"><img src="images/blog/7.jpg" class="img-responsive" alt=""></a>
+
+                                    <div class="post-overlay">
+
+                                        <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="post-content overflow">
+
+                                    <h2 class="post-title bold"><a href="'.$link.'">'.$row->judul_artikel.'</a></h2>
+
+                                    <h3 class="post-author"><a href="#"> by '.$row->username.'</a></h3>'.'
+
+                                    <p>'.$abstract_text.'</p>'.'
+
+                                    <a href="'.$link.'"'.'class="read-more">View More</a>
+
+                                    <div class="post-bottom overflow">
+
+                                        <ul class="nav navbar-nav post-nav">
+
+                                            <li><a href="#"><i class="fa fa-tag"></i>'.$row->nama_kategori_artikel.'</a></li>
+
+                                            
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>';
+
+                        }
+
+                       } 
+
+                    ?>
+
+
+
+                      
+
+                    </div>
+
+
+
+                    <!-- <h2 class="page-header" style="color: red;text-align: center;">Halaman</h2> -->
+
+                    <div class="blog-pagination">
+
+                       <?php echo $links;?>
+
+                    </div>
+
+                 </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--/#blog-->

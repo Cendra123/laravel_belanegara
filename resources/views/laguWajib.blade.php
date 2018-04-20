@@ -1,85 +1,163 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<section id="page-breadcrumb">
 
-        <title>Laravel</title>
+        <div class="vertical-center sun">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+             <div class="container">
 
-        <!-- Styles -->
-        <!-- /*<style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+                <div class="row">
 
-            .full-height {
-                height: 100vh;
-            }
+                    <div class="action">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                        <div class="col-sm-12">
 
-            .position-ref {
-                position: relative;
-            }
+                            <h1 class="title" style="text-align: left;">Lagu Wajib</h1>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                            <!-- <p>Blog with right sidebar</p> -->
 
-            .content {
-                text-align: center;
-            }
+                        </div>
 
-            .title {
-                font-size: 84px;
-            }
+                    </div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>*/ -->
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-          @include('includes.header')
-            <div class="content">
-                <div class="title m-b-md">
-                  laguWajib
                 </div>
 
-                <!-- <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                </div>
             </div>
+
         </div>
-    </body>
-</html>
+
+   </section>
+
+    <!--/#action-->
+
+
+
+    <div class="container">
+
+
+
+    <div class="row">
+
+    <div class="table-responsive">          
+
+  <table class="table table-hover" id="list_lagu_wajib">
+
+    <thead>
+
+      <tr>
+
+        <!-- <th>#</th> -->
+
+        <th>Judul Lagu</th>
+
+        <th>Pengarang</th>
+
+        <th disable-sorting nosort>Nada Dasar</th>
+
+        <th disable-sorting nosort>Ketukan</th>
+
+        <!-- <th>Country</th> -->
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+        <?php
+
+
+
+        foreach ($list_lagu_wajib as $row) {
+
+            # code...
+
+            $link = base_url()."index.php/Lagu_Wajib/detail_lagu_wajib/".$row->id_lagu_wajib;
+
+
+
+            echo "<tr>";
+
+            //echo "<td>".$row->judul_lagu_wajib."</td>";
+
+            echo "<td>"."<a href='".$link."'>".$row->judul_lagu_wajib."</a>"."</td>";
+
+            echo "<td>".$row->nama_pengarang_lagu."</td>";
+
+            echo "<td>".$row->nada_dasar."</td>";
+
+            echo "<td>".$row->ketukan."</td>";
+
+            echo "</tr>";
+
+        }
+
+
+
+        ?>
+
+    </tbody>
+
+  </table>
+
+  </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        // body...
+
+        // $('#list_lagu_wajib').dataTable({
+
+        //      aaSorting: [[1, 'desc']],
+
+        // bPaginate: true,
+
+        // bFilter: true,
+
+        // bInfo: false,
+
+        // bSortable: true,
+
+        // bRetrieve: true,
+
+        // aoColumnDefs: [
+
+        //     { "aTargets": [ 0 ], "bSortable": true },
+
+        //     { "aTargets": [ 1 ], "bSortable": true },
+
+        //     { "aTargets": [ 2 ], "bSortable": true },
+
+        //     { "aTargets": [ 3 ], "bSortable": false }
+
+        // ]
+
+            
+
+        
+
+        // });
+
+        $('#list_lagu_wajib').dataTable( {
+
+  'aoColumnDefs': [{
+
+        'bSortable': false,
+
+        'aTargets': ['nosort']
+
+    }]
+
+} );
+
+    });
+
+    </script>

@@ -40,11 +40,11 @@
 
          <!-- <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2> -->
 
+         
 
 
 
-
-
+    
 
         <div id="testimonial-container">
 
@@ -64,7 +64,7 @@
 
                         <input class="form-control" id="date" style="width: 60%; margin-bottom: 15px;" name="date" placeholder="Input Tanggal Pencarian Berita" type="text"/>
 
-
+    
 
 
 
@@ -110,11 +110,11 @@
 
                     }
 
-
+                            
 
                         ?>
 
-
+                                
 
                         </div>
 
@@ -126,9 +126,9 @@
 
 
 
+                    
 
-
-
+                    
 
                 </div>
 
@@ -144,21 +144,21 @@
 
 
 
+                   
 
-
-                       <?php
+                       <?php 
 
                        if(isset($links)){
-                       echo $links;
+                       echo $links; 
                    }
 
-                       ?>
+                       ?> 
+
+                  
 
 
 
-
-
-
+                      
 
                 </div>
 
@@ -176,7 +176,7 @@
 
     <script type="text/javascript">
 
-
+        
 
     $(document).ready(function(){
 
@@ -213,3 +213,6 @@
 </script>
 
     </script>
+
+
+

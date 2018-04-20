@@ -1,3 +1,7 @@
+
+
+   
+
     <section id="page-breadcrumb">
 
         <div class="vertical-center sun">
@@ -14,7 +18,7 @@
 
                             <p><?php echo $detail_berita[0]->waktu;?> ~ <?php echo $detail_berita[0]->username;?></p>
 
-                        </div>
+                        </div>                                                                                
 
                     </div>
 
@@ -58,11 +62,11 @@
 
                                 <div  class="post-content overflow">
 
-
+                                    
 
                                     <?php echo $detail_berita[0]->konten_berita;?>
 
-
+                             
 
                                 </div>
 
@@ -84,7 +88,7 @@
 
                             <h3 style="color: red;">Berita Lainnya</h3>
 
-
+                            
 
 
 
@@ -110,7 +114,7 @@
 
                                     echo "</div>";
 
-                                    echo "</div>";
+                                    echo "</div>"; 
 
                                 }
 
@@ -118,7 +122,7 @@
 
                             ?>
 
-                               <!--
+                               <!--   
 
                                 <div class="media-body">
 
@@ -130,9 +134,9 @@
 
                             </div>
 
+                      
 
-
-
+                     
 
                     </div>
 

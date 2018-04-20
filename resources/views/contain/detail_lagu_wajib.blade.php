@@ -2,7 +2,7 @@
   p{
     font-size: 22px;
   }
-
+  
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -38,26 +38,26 @@ blockquote:after {
 <div class="row">
 <div class="col-sm-6">
   <div id="poem">
-
+  
     <h1><?php echo $detail_lagu_wajib[0]->judul_lagu_wajib;?></h1>
-
+    
     <h2>Oleh <?php echo $detail_lagu_wajib[0]->nama_pengarang_lagu;?></h2>
 
                 <div class="post-thumb" style="margin-bottom: 15px;">
                     <audio src="<?php echo $detail_lagu_wajib[0]->url_lagu; ?>" preload="auto"></audio>
                 </div>
-
-
+    
+  
   <div class="container">
   <!-- <?php //echo $lirik;?> -->
   <?php  echo $detail_lagu_wajib[0]->lirik?>
-
+    
+  </div>
+  
   </div>
 
-  </div>
-
-
-</div>
+   
+</div> 
 <div class="col-sm-6">
 
  <img alt="Brand" src="<?php echo $detail_lagu_wajib[0]->url_foto ;?>" width="100" heigth="100" class="img-responsive center-block">
@@ -77,8 +77,8 @@ blockquote:after {
 </div>
 
 </div>
-
-
+ 
+  
 
 </div>
 
@@ -87,3 +87,5 @@ blockquote:after {
         var as = audiojs.createAll();
       });
     </script>
+
+    

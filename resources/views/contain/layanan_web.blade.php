@@ -1,16 +1,16 @@
 <section id="layanan_web">
-	<div class="container">
+    <div class="container">
 
-		<div class="row">
+        <div class="row">
+
+        
+            <div class="portfolio-items">
+
+             <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2>
 
 
-			<div class="portfolio-items">
 
-			 <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2>
-
-
-
-				  <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item branded logos">
+                  <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item branded logos">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-single">
                                 <div class="portfolio-thumb">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                  </div>
-
+                 
                 <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item branded logos">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-single">
@@ -103,20 +103,20 @@
                                 <h2>Sailing Vivamus</h2>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
 
+                   
+
+               
+
+            </div>
+            
+
+        </div>
+
+    </div>
 
 
-
-
-			</div>
-
-
-		</div>
-
-	</div>
-
-
-	</script>
+    </script>
 </section>

@@ -42,7 +42,7 @@
 
                     <div class="sidebar blog-sidebar">
 
-
+                       
 
                         <div class="sidebar-item categories">
 
@@ -74,7 +74,7 @@
 
                         </div>
 
-
+                  
 
                     </div>
 
@@ -86,7 +86,7 @@
 
 
 
-                    <?php
+                    <?php 
 
 
 
@@ -146,7 +146,7 @@
 
                                             <li><a href="#"><i class="fa fa-tag"></i>'.$row->nama_kategori_artikel.'</a></li>
 
-
+                                            
 
                                         </ul>
 
@@ -160,13 +160,13 @@
 
                         }
 
-                       }
+                       } 
 
                     ?>
 
 
 
-
+                      
 
                     </div>
 

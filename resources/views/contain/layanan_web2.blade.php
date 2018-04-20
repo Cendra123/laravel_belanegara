@@ -3,7 +3,7 @@
          <!-- <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2> -->
             <div class="row">
                 <h2 class="title text-center wow fadeInDown" style="color: red;" data-wow-duration="500ms" data-wow-delay="300ms">Layanan Web</h2>
-
+               
 
                 <div id="team-carousel" class="carousel slide wow fadeIn" data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms">
                     <!-- Indicators -->
@@ -97,7 +97,7 @@
 
                         </div>
                        <!--  <div class="item">
-
+                          
                             <div class="col-sm-3 col-xs-6">
                                 <div class="team-single-wrapper">
                                     <div class="team-single">
@@ -118,8 +118,8 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </div> -->
+                           
+                        </div> --> 
                     </div>
 
                     <!-- Controls -->

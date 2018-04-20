@@ -1,87 +1,218 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-          @include('theme.theme')
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <!-- /*<style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
+<section id="page-breadcrumb">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        <div class="vertical-center sun">
 
-            .position-ref {
-                position: relative;
-            }
+             <div class="container">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                <div class="row">
 
-            .content {
-                text-align: center;
-            }
+                    <div class="action">
 
-            .title {
-                font-size: 84px;
-            }
+                        <div class="col-sm-12">
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+                            <h1 class="title">Berita</h1>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>*/ -->
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-          @include('includes.header')
+                            <!-- <p>Blog with right sidebar</p> -->
 
-            <div class="content">
-                <div class="title m-b-md">
-                    berita
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <!-- <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
             </div>
+
         </div>
-    </body>
-</html>
+
+   </section>
+
+    <!--/#action-->
+
+
+
+<section id="team" style="margin: 0;padding: 0px 0px 85px 0px;">
+
+        <div class="container">
+
+         <!-- <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2> -->
+
+         
+
+
+
+    
+
+        <div id="testimonial-container">
+
+
+
+
+
+                <div class="row">
+
+                    <div class="col-md-8">
+
+                        <h2 class="page-header" style="color: red;">Berita</h2>
+
+                        <div class="testimonial">
+
+
+
+                        <input class="form-control" id="date" style="width: 60%; margin-bottom: 15px;" name="date" placeholder="Input Tanggal Pencarian Berita" type="text"/>
+
+    
+
+
+
+                        <?php
+
+
+
+                        if($list_berita){
+
+
+
+                        foreach ($list_berita as $row) {
+
+                            # code...
+
+                            $link = base_url().'index.php/Detail_Berita/detail_berita/'.$row->id_berita;
+
+
+
+                            echo "<div class='media'>";
+
+                                echo "<div class='pull-left'>";
+
+                                echo "<a href='#'> <img class='img-responsive' height='150' width='150' src='".$row->featured_image."'></a>";
+
+                                echo "</div>";
+
+
+
+                                echo "<div class='media-body'>";
+
+                                echo "<a href='".$link."'>"."<blockquote>".$row->judul."</blockquote></a>";
+
+                                echo "<h3><a href='#'>-".$row->username."</a></h3>";
+
+                                echo "</div>";
+
+
+
+                            echo "</div>";
+
+                        }
+
+                    }
+
+                            
+
+                        ?>
+
+                                
+
+                        </div>
+
+
+
+                        <!-- <button class="btn btn-danger center-block">Selengkapnya...</button> -->
+
+                    </div>
+
+
+
+                    
+
+                    
+
+                </div>
+
+            </div><!--/#testimonial-container-->
+
+
+
+                <div class="blog-pagination">
+
+
+
+                <!-- <h2 class="page-header" style="color: red;">Halaman</h3> -->
+
+
+
+                   
+
+                       <?php 
+
+                       if(isset($links)){
+                       echo $links; 
+                   }
+
+                       ?> 
+
+                  
+
+
+
+                      
+
+                </div>
+
+            <!-- </div> -->
+
+
+
+     </div>
+
+    </section>
+
+    <!--/#team-->
+
+
+
+    <script type="text/javascript">
+
+        
+
+    $(document).ready(function(){
+
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+
+      //var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+
+      var options={
+
+        format: 'yyyy-mm-dd',
+
+        //container: container,
+
+        todayHighlight: true,
+
+        autoclose: true,
+
+      };
+
+      date_input.datepicker(options).on('hide',function (e) {
+
+          // body...
+
+          //console.log(e);
+
+          window.location.href = "<?php echo base_url('index.php/berita/list_berita/'); ?>"+date_input.val();
+
+         // alert(date_input.val());
+
+      });
+
+    })
+
+</script>
+
+    </script>
+
+
+

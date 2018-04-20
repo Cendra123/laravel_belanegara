@@ -1,15 +1,15 @@
 <style type="text/css">
     @media (min-width: 300px) and (max-width: 992px) {
     #container_carousel_berita {
-
+     
        margin-bottom: 400px;
-
+    
     }
 
 
 
 
-
+  
 }
 
 </style>
@@ -20,7 +20,7 @@
 
 
 
-
+  
 
 
 
@@ -52,11 +52,11 @@
 
                     ?>
 
+                      
 
+                       
 
-
-
-                    </ul>
+                    </ul>                    
 
                 </div>
 

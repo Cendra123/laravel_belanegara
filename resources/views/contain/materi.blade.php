@@ -39,12 +39,12 @@
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 }
+  from { bottom:-100px; opacity:0 } 
   to { bottom:0px; opacity:1 }
 }
 
-@keyframes animatebottom {
-  from{ bottom:-100px; opacity:0 }
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
 
@@ -72,7 +72,7 @@
     <!--/#action-->
 
         <section id="materi"  style="margin-bottom: 20px;">
-
+   
 
         <div class="container">
 
@@ -85,7 +85,7 @@
         <div id="loader" style="display: none;"></div>
         <div id="pdf_materi" class="center-block animate-bottom"></div>
         </div>
-
+        
         </div>
     </section>
 
@@ -97,7 +97,7 @@
     if(obj == null || typeof(obj) != 'object')
         return obj;
 
-    var temp = new obj.constructor();
+    var temp = new obj.constructor(); 
     for(var key in obj)
         temp[key] = clone(obj[key]);
 
@@ -143,7 +143,7 @@
                            $.ajax({
     url : 'http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/get_directory_upload',
     type: "GET",
-
+    
     success: function(data, textStatus, jqXHR)
     {
         //data - response from server
@@ -155,7 +155,7 @@
 
         var final_url = hasil.directory_upload;
 
-
+        
 
         for(var i=0;i<raw_url.length;i++){
 
@@ -175,12 +175,12 @@
                     final_url+="/";
                 }
             }
-
+       
 
         }
 
         $('#loader').hide();
-
+        
         $('#pdf_materi').show();
 
 
@@ -188,22 +188,22 @@
         PDFObject.embed(final_url, "#pdf_materi");
 
         console.log(final_url);
-
+     
      },
     error: function (jqXHR, textStatus, errorThrown)
     {
-
+ 
     }
 });
     }
 
-
-
+ 
+       
        function cari(data,yg_dicari,obj_arr) {
 
         // body...
 
-
+        
 
         //obj_arr.push(data.text);
 
@@ -228,7 +228,7 @@
             if(data.children!=null){
                 //alert(data.text+" punya anak "+data.children.length);
 
-
+                
                 //alert(data.text);
 
                 if(data.children.length==0){
@@ -249,17 +249,17 @@
 
                 for(var i=0;i<data.children.length;i++){
                     //obj_arr = [];
+                     
 
-
-
+                  
 
                     var d = clone(obj_arr);
 
                     cari(data.children[i],yg_dicari,d);
+                   
 
 
-
-
+        
                 }
             }
         }
@@ -268,17 +268,17 @@
 
             else{
 
-
+                                
                 obj_arr.unshift(data.text);
 
                 //meeng.unshift(obj_arr);
                 return false;
-            }
+            } 
 
 
         }
     };
-
+         
 
         $('#file_materi').jstree({
         'core' : {
@@ -298,10 +298,10 @@
         //alert(teks);
 
 
-
+      
 
         //alert(final_url);
-
+        
         //console.log(final_url);
 
         var url2 = "http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/z";
@@ -309,7 +309,7 @@
                          $.ajax({
     url : url2,
     type: "GET",
-
+    
     success: function(data, textStatus, jqXHR)
     {
         //data - response from server
@@ -326,33 +326,33 @@
             //alert(hasil[i].text);
             var obj_arr = [];
 
+            
 
-
-            is_found = cari(hasil[i],teks,obj_arr);
+            is_found = cari(hasil[i],teks,obj_arr); 
 
             // if(is_found==true){
             //     break;
-            // }
+            // }   
             //meeng.unshift(obj_arr);
         }
 
         console.log(meeng);
 
         tampil_pdf(meeng);
+        
 
-
-
+     
      },
     error: function (jqXHR, textStatus, errorThrown)
     {
-
+ 
     }
 });
 
-
+        
     });
 
 
 
-
+     
     </script>

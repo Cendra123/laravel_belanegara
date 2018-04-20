@@ -1,6 +1,6 @@
 
 
-
+   
 
     <section id="page-breadcrumb">
 
@@ -18,7 +18,7 @@
 
                             <p><?php echo $detail_artikel[0]->waktu;?> ~ <?php echo $detail_artikel[0]->username;?></p>
 
-                        </div>
+                        </div>                                                                                
 
                     </div>
 
@@ -52,17 +52,17 @@
 
                                     <a href="#"><img src="<?php //echo $detail_berita[0]->featured_image;?>" class="img-responsive" alt="" height="1200" width="800"></a>
 
-
+                                   
 
                                 </div> -->
 
                                 <div  class="post-content overflow">
 
-
+                                    
 
                                     <?php echo $detail_artikel[0]->konten_artikel;?>
 
-
+                             
 
                                 </div>
 
@@ -110,9 +110,9 @@
 
 
 
+                          
 
-
-
+                      
 
                         </div>
 
@@ -125,7 +125,7 @@
 
                             <h3 style="color: red;">Artikel Lainnya</h3>
 
-
+                            
 
 
 
@@ -153,7 +153,7 @@
 
                                     echo "</div>";
 
-                                    echo "</div>";
+                                    echo "</div>"; 
 
                                 }
                             }
@@ -162,7 +162,7 @@
 
                             ?>
 
-                               <!--
+                               <!--   
 
                                 <div class="media-body">
 
@@ -174,9 +174,9 @@
 
                             </div>
 
+                      
 
-
-
+                     
 
                     </div>
 
