@@ -20,3 +20,4 @@ Route::get('/laguWajib', 'laguWajib@index')->name('laguWajib');
 Route::get('/materi', 'materi@index')->name('materi');
 Route::get('/permainan', 'permainan@index')->name('permainan');
 Route::get('/berita', 'berita@index')->name('berita');
+ // cobas
