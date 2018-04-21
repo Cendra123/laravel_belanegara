@@ -10,6 +10,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+// use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -40,26 +41,37 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+      $this->middleware('guest')->except('logout');
     }
     public function login(Request $request)
     {
-      // dd($request->all());
-      if(Auth::attemp([
-        'username' => $request->username,
-        'password' => $request->password,
-      ])){
-        dd($user = User::where('username', $request->username)->first());
+      $this->validation($request);
+      if(Auth::attempt(['username'=>$request->username,'password'=>md5($request->password)])){
+        // return 'berhasil login';
+        return View('home');
       }
-
-
-    //    $user = User::where('username', $request->username)
-    //                 ->where('password',md5($request->password))
-    //                 ->first();
-    //    if($user){
-    //
-    //    }
-    //    Auth::login($user);
-    //    return redirect('/');
+      else{
+        // return 'gagal login';
+        return view('auth.login');
+      }
     }
-}
+
+
+    //Change laravel_belanegara\vendor\laravel\framework\src\Illuminate\Auth\Authenticatable.php
+    // Authenticable
+    // public function getAuthPassword()
+    // {
+    //     return bcrypt($this->password);
+
+    // }
+    public function username()
+    {
+        return 'username';
+    }
+    public function validation($request){
+      return $this->validate($request,[
+        'username' => 'required|max:225',
+        'password' => 'required|max:225'
+      ]);
+    }
+  }
