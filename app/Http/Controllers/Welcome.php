@@ -13,6 +13,11 @@ class Welcome extends Controller
      */
     public function index()
     {
+
+    //Load Data
+        
+
+    //View welcome
       return View('welcome');
     }
 
