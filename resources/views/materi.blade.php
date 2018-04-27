@@ -55,56 +55,56 @@
 
 </style>
 
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">Materi</h1>
-                            <!-- <p>Blog with right sidebar</p> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+   <div class="container">
+    <div class="row">
+      <div class="action">
+        <div class="col-sm-12">
+          <h1 class="title">Materi</h1>
+          <!-- <p>Blog with right sidebar</p> -->
         </div>
-   </section>
-    <!--/#action-->
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--/#action-->
 
-        <section id="materi"  style="margin-bottom: 20px;">
-   
+<section id="materi"  style="margin-bottom: 20px;">
+ 
 
-        <div class="container">
+  <div class="container">
 
-        <div class="col-md-6 pre-scrollable">
+    <div class="col-md-6 pre-scrollable">
 
-        <div id="file_materi"></div>
-        </div>
+      <div id="file_materi"></div>
+    </div>
 
-        <div class="col-md-6">
-        <div id="loader" style="display: none;"></div>
-        <div id="pdf_materi" class="center-block animate-bottom"></div>
-        </div>
-        
-        </div>
-    </section>
+    <div class="col-md-6">
+      <div id="loader" style="display: none;"></div>
+      <div id="pdf_materi" class="center-block animate-bottom"></div>
+    </div>
+    
+  </div>
+</section>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-    var meeng = [];
+  var meeng = [];
 
-       function clone(obj){
+  function clone(obj){
     if(obj == null || typeof(obj) != 'object')
-        return obj;
+      return obj;
 
     var temp = new obj.constructor(); 
     for(var key in obj)
-        temp[key] = clone(obj[key]);
+      temp[key] = clone(obj[key]);
 
     return temp;
-}
+  }
 
-    function rawurlencode (str) {
+  function rawurlencode (str) {
   //       discuss at: http://locutus.io/php/rawurlencode/
   //      original by: Brett Zamir (http://brett-zamir.me)
   //         input by: travc
@@ -131,33 +131,33 @@
   // but if you want to reflect current
   // PHP behavior, you would need to add ".replace(/~/g, '%7E');" to the following.
   return encodeURIComponent(str)
-    .replace(/!/g, '%21')
-    .replace(/'/g, '%27')
-    .replace(/\(/g, '%28')
-    .replace(/\)/g, '%29')
-    .replace(/\*/g, '%2A')
+  .replace(/!/g, '%21')
+  .replace(/'/g, '%27')
+  .replace(/\(/g, '%28')
+  .replace(/\)/g, '%29')
+  .replace(/\*/g, '%2A')
 }
 
-    function tampil_pdf(raw_url) {
+function tampil_pdf(raw_url) {
         // body...
-                           $.ajax({
-    url : 'http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/get_directory_upload',
-    type: "GET",
-    
-    success: function(data, textStatus, jqXHR)
-    {
+        $.ajax({
+          url : 'http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/get_directory_upload',
+          type: "GET",
+          
+          success: function(data, textStatus, jqXHR)
+          {
         //data - response from server
        // console.log(data);
 
-        var hasil = $.parseJSON(data);
+       var hasil = $.parseJSON(data);
 
-        console.log(hasil);
+       console.log(hasil);
 
-        var final_url = hasil.directory_upload;
+       var final_url = hasil.directory_upload;
 
-        
+       
 
-        for(var i=0;i<raw_url.length;i++){
+       for(var i=0;i<raw_url.length;i++){
 
             //alert(raw_url[i].length);
 
@@ -168,38 +168,38 @@
             for(var j=0;j<arr.length;j++){
                // alert(arr[j]);
 
-                var str = rawurlencode(arr[j]);
+               var str = rawurlencode(arr[j]);
 
-                final_url+=str;
-                if(j < arr.length-1){
-                    final_url+="/";
-                }
+               final_url+=str;
+               if(j < arr.length-1){
+                final_url+="/";
+              }
             }
-       
+            
 
+          }
+
+          $('#loader').hide();
+          
+          $('#pdf_materi').show();
+
+
+
+          PDFObject.embed(final_url, "#pdf_materi");
+
+          console.log(final_url);
+          
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+         
         }
+      });
+      }
 
-        $('#loader').hide();
-        
-        $('#pdf_materi').show();
-
-
-
-        PDFObject.embed(final_url, "#pdf_materi");
-
-        console.log(final_url);
-     
-     },
-    error: function (jqXHR, textStatus, errorThrown)
-    {
- 
-    }
-});
-    }
-
- 
-       
-       function cari(data,yg_dicari,obj_arr) {
+      
+      
+      function cari(data,yg_dicari,obj_arr) {
 
         // body...
 
@@ -217,15 +217,15 @@
             return true;
 
             //obj_arr = [];
-        }
-        else{
+          }
+          else{
 
             //obj_arr.push(data.text);
 
            // alert(data.text);
 
 
-            if(data.children!=null){
+           if(data.children!=null){
                 //alert(data.text+" punya anak "+data.children.length);
 
                 
@@ -233,61 +233,61 @@
 
                 if(data.children.length==0){
 
-                    obj_arr.unshift(data.text);
+                  obj_arr.unshift(data.text);
 
                     //meeng.unshift(obj_arr);
 
                     return false;
 
                     //obj_arr = [];
-                }
+                  }
 
-                else{
+                  else{
 
 
-                      obj_arr.unshift(data.text);
+                    obj_arr.unshift(data.text);
 
-                for(var i=0;i<data.children.length;i++){
+                    for(var i=0;i<data.children.length;i++){
                     //obj_arr = [];
-                     
+                    
 
-                  
+                    
 
                     var d = clone(obj_arr);
 
                     cari(data.children[i],yg_dicari,d);
-                   
+                    
 
 
-        
+                    
+                  }
                 }
-            }
-        }
+              }
 
 
 
-            else{
+              else{
 
-                                
+                
                 obj_arr.unshift(data.text);
 
                 //meeng.unshift(obj_arr);
                 return false;
-            } 
+              } 
 
 
-        }
-    };
-         
+            }
+          };
+          
 
-        $('#file_materi').jstree({
-        'core' : {
-            'data' : {
+          $('#file_materi').jstree({
+            'core' : {
+              'data' : {
                 "url" : "http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/z",
                 "dataType" : "json" // needed only if you do not supply JSON headers
+              }
             }
-        }
-    }).on('changed.jstree',function (e,data) {
+          }).on('changed.jstree',function (e,data) {
         // body...
         $("#loader").show();
 
@@ -298,7 +298,7 @@
         //alert(teks);
 
 
-      
+        
 
         //alert(final_url);
         
@@ -306,23 +306,23 @@
 
         var url2 = "http://www.belanegaraku.id/admin_belanegara/index.php/MyDir/z";
 
-                         $.ajax({
-    url : url2,
-    type: "GET",
-    
-    success: function(data, textStatus, jqXHR)
-    {
+        $.ajax({
+          url : url2,
+          type: "GET",
+          
+          success: function(data, textStatus, jqXHR)
+          {
         //data - response from server
        // console.log(data);
 
-        var hasil = $.parseJSON(data);
+       var hasil = $.parseJSON(data);
 
-        console.log(hasil);
+       console.log(hasil);
 
 
-        var is_found;
+       var is_found;
 
-        for(var i=0;i<hasil.length;i++){
+       for(var i=0;i<hasil.length;i++){
             //alert(hasil[i].text);
             var obj_arr = [];
 
@@ -334,25 +334,25 @@
             //     break;
             // }   
             //meeng.unshift(obj_arr);
+          }
+
+          console.log(meeng);
+
+          tampil_pdf(meeng);
+          
+
+          
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+         
         }
-
-        console.log(meeng);
-
-        tampil_pdf(meeng);
-        
-
-     
-     },
-    error: function (jqXHR, textStatus, errorThrown)
-    {
- 
-    }
-});
+      });
 
         
-    });
+      });
 
 
 
-     
+          
     </script>
