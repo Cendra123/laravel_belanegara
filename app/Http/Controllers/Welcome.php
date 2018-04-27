@@ -18,7 +18,7 @@ class Welcome extends Controller
         
 
     //View welcome
-      return View('welcome');
+      return View('welcome')->with('headline',null);
     }
 
     /**
