@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class artikel extends Model
+class Artikel extends Model
 {
 	
 	protected $table = 'artikel'; // nama tabel
@@ -15,9 +15,10 @@ class artikel extends Model
 		'id_artikel',
 		'judul_artikel',
 		'viewer',
+		'author',
 		'waktu',
 		'kategori_artikel',
 		'konten_artikel',
-		'is_artikel_approved',
+		'is_article_approved',
 	];
 }

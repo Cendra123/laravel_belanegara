@@ -4,22 +4,18 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Berita extends Model
+class KritikSaran extends Model
 {
     //
-    protected $table = 'berita'; // nama tabel
+    protected $table = 'kritik_saran'; // nama tabel
 
     public $timestamps = false;
 
 	protected $fillable = [ // nama kolom yang tersedia
-		'id',
-		'judul',
-		'penulis',
-		'featured_image',
-		'konten',
-		'headline',
+		'id_kritik_saran',
+		'nama',
+		'email',
 		'waktu',
-		'status',
-		'viewer',
+		'isi',
 	];
 }
