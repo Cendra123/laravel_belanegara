@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+// use Illuminate\Support\Facades\Request;
+use DB;
 
 class Welcome extends Controller
 {
@@ -15,10 +18,10 @@ class Welcome extends Controller
     {
 
     //Load Data
-        
-
+    $headline = DB::table('Berita')->get();
+    // dd($headline);
     //View welcome
-      return View('welcome')->with('headline',null);
+      return View('welcome')->with('headline',$headline);
     }
 
     /**
