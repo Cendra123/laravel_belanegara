@@ -17,6 +17,8 @@ class Welcome extends Controller
     public function index()
     {
 
+    $artikelTerkini = DB::table('Berita')->select('Berita.id','judul', 'penulis','waktu', 'status', 'viewer', 'username', 'featured_image')->where('headline',0)->join('User','Berita.penulis','=','User.id')->orderBy('waktu','desc')->get();
+    dd($artikelTerkini);
     //Load Data
     $headline = DB::table('Berita')->get();
     // dd($headline);
