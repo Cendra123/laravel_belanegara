@@ -17,7 +17,10 @@ class Welcome extends Controller
     public function index()
     {
 
-    $artikelTerkini = DB::table('Berita')->select('Berita.id','judul', 'penulis','waktu', 'status', 'viewer', 'username', 'featured_image')->where('headline',0)->join('User','Berita.penulis','=','User.id')->orderBy('waktu','desc')->get();
+    $beritaTerkini = DB::table('Berita')->select('Berita.id','judul', 'penulis','waktu', 'status', 'viewer', 'username', 'featured_image')->where('headline',0)->join('User','Berita.penulis','=','User.id')->orderBy('waktu','desc')->get();
+
+    $artikelTerkini = DB::table('Artikel')->select('*')->where('is_article_approved', 1)->join('User','Artikel.author','=','User.id')->join('kategori_artikel','Artikel.kategori_artikel','=','kategori_artikel.id_kategori_artikel')->orderBy('waktu','desc')->get();
+
     dd($artikelTerkini);
     //Load Data
     $headline = DB::table('Berita')->get();
