@@ -9,6 +9,6 @@
 	<script type="text/javascript" src="{{ asset('js/holder.js') }}"></script>
 </header>
 @include('contain.carousel_berita')
-
+@include('contain.artikel_berita_terkini');
 @stop
 
