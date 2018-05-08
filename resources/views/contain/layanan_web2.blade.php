@@ -18,7 +18,7 @@
                                 <div class="team-single-wrapper">
                                     <div class="team-single">
                                         <div class="person-thumb">
-                                            <img src="<?php echo base_url();?>assets/icon/icon_permainan_BN.png" class="img-responsive" alt="">
+                                            <img src="{{asset('/icon/icon_permainan_BN.png')}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="social-profile">
                                             <ul class="nav nav-pills">
@@ -38,7 +38,7 @@
                                 <div class="team-single-wrapper">
                                     <div class="team-single">
                                         <div class="person-thumb">
-                                            <img src="<?php echo base_url();?>assets/icon/icon_lagu_BN.png" class="img-responsive" alt="">
+                                            <img src="{{asset('/icon/icon_lagu_BN.png')}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="social-profile">
                                             <ul class="nav nav-pills">
@@ -58,7 +58,7 @@
                                 <div class="team-single-wrapper">
                                     <div class="team-single">
                                         <div class="person-thumb">
-                                            <img src="<?php echo base_url();?>assets/icon/icon_materi_BN.png" class="img-responsive" alt="">
+                                            <img src="{{asset('/icon/icon_materi_BN.png')}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="social-profile">
                                             <ul class="nav nav-pills">
@@ -78,7 +78,7 @@
                                 <div class="team-single-wrapper">
                                     <div class="team-single">
                                         <div class="person-thumb">
-                                            <img src="<?php echo base_url();?>assets/icon/icon_artikel_BN.png" class="img-responsive" alt="">
+                                            <img src="{{asset('/icon/icon_artikel_BN.png')}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="social-profile">
                                             <ul class="nav nav-pills">

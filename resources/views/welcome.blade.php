@@ -10,5 +10,6 @@
 </header>
 @include('contain.carousel_berita')
 @include('contain.artikel_berita_terkini');
+@include('contain.layanan_web2');
 @stop
 
