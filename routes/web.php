@@ -21,6 +21,6 @@ Route::get('/materi', 'materi@index')->name('materi');
 Route::get('/permainan', 'permainan@index')->name('permainan');
 Route::get('/berita', 'berita@index')->name('berita');
 // Route::get('/berita/($id)', 'berita@index');
-
+Route::get('berita/{id}', 'Berita@detailBerita')->name('detailBerita');
 
 // Route::post('/kritik_saran','simpan@Kritik_Saran');

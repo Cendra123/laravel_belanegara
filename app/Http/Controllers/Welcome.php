@@ -22,8 +22,6 @@ class Welcome extends Controller
         $artikelTerkini = DB::table('Artikel')->select('*')->where('is_article_approved', 1)->join('User','Artikel.author','=','User.id')->join('kategori_artikel','Artikel.kategori_artikel','=','kategori_artikel.id_kategori_artikel')->orderBy('waktu','desc')->get();
 
         $headline = DB::table('Berita')->get();
-    // dd($headline);
-    //View welcome
         return View('welcome')->with('headline',$headline)->with('berita_terkini',$beritaTerkini)->with('artikel_terkini',$artikelTerkini);
     }
 

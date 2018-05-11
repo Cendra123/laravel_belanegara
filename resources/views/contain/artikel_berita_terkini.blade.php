@@ -19,7 +19,6 @@
 
                    @if($berita_terkini)
 
-
                    @foreach ($berita_terkini as $row) 
 
 
@@ -27,7 +26,9 @@
 
                     <div class='pull-left'>
 
-                        <a href='#'> <img class='img-responsive' height='150' width='150' src='{{$row->featured_image}}'></a>
+                        <a href='{{ route('detailBerita', [$row->id]) }}'> 
+                            <img class='img-responsive' height='150' width='150' src='{{$row->featured_image}}'>
+                        </a>
 
                     </div>
 
@@ -70,7 +71,7 @@
 
             @foreach ($artikel_terkini as $row) 
 
-            
+
             <blockquote>
 
                 <p><a style='color:#808080;' href='".$link."'>{{$row->judul_artikel}}</a></p>
@@ -88,7 +89,7 @@
 
             @endif
 
-            
+
         </div>
 
 
@@ -103,7 +104,7 @@
 
 </section>
 
-
+{{-- 
 
 <script type="text/javascript">
 
@@ -147,4 +148,4 @@
 
     });
 
-</script>
+</script> --}}
