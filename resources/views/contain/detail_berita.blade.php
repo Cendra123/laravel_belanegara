@@ -14,9 +14,9 @@
 
                         <div class="col-sm-12">
 
-                            <h1 class="title"><?php echo $detail_berita[0]->judul;?></h1>
+                            <h1 class="title">{{ $detail_berita[0]->judul }}</h1>
 
-                            <p><?php echo $detail_berita[0]->waktu;?> ~ <?php echo $detail_berita[0]->username;?></p>
+                            <p> {{ $detail_berita[0]->waktu }} ~ {{ $detail_berita[0]->username }}</p>
 
                         </div>                                                                                
 
@@ -50,7 +50,7 @@
 
                                 <div class="post-thumb">
 
-                                    <a href="#"><img src="<?php echo $detail_berita[0]->featured_image;?>" class="img-responsive" alt="" height="1200" width="800"></a>
+                                    <a href="#"><img src="{{ $detail_berita[0]->featured_image }}" class="img-responsive" alt="" height="1200" width="800"></a>
 
                                     <!-- <div class="post-overlay">
 
@@ -64,9 +64,7 @@
 
                                     
 
-                                    <?php echo $detail_berita[0]->konten_berita;?>
-
-                             
+                                    {{ $detail_berita[0]->konten_berita }}
 
                                 </div>
 
@@ -92,35 +90,23 @@
 
 
 
-                            <?php
-
-                                foreach ($berita_lainnya as $row) {
+                                @foreach ($berita_lainnya as $row) 
 
                                     # code...
 
-                                    echo "<div class='media'>";
+                                    <div class='media'>
 
-                                    echo "<div class='media-body'>";
+                                    <div class='media-body'>;
 
+                                    <h4><a href='{{ route($row->id) }}'>{{ $row->judul }}</h4>;
 
+                                    <p> posted on {{ $row->waktu }} </p>;
 
-                                    $link = base_url()."index.php/".'Detail_Berita/detail_berita/'.$row->id;
+                                    </div>;
 
-                                    echo "<h4><a href='".$link."'>".$row->judul."</h4>";
+                                    </div>; 
 
-                                    echo "<p> posted on ".$row->waktu."</p>";
-
-
-
-                                    echo "</div>";
-
-                                    echo "</div>"; 
-
-                                }
-
-
-
-                            ?>
+                                @endforeach
 
                                <!--   
 
