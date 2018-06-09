@@ -98,7 +98,7 @@
 
                                 <div class='media-body'>
 
-                                    <h4><a href='#'>{{ $row->judul }}</h4>
+                                    <h4><a href='{{ route('detailBerita', [$row->id]) }}'>{{ $row->judul }}</h4>
 
                                         <p> posted on {{ $row->waktu }} </p>
 

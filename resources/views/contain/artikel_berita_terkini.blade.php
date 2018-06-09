@@ -36,7 +36,7 @@
 
                     <div class='media-body'>
 
-                        <a href=''><blockquote>{{$row->judul}}</blockquote></a>
+                        <a href='{{ route('detailBerita', [$row->id]) }}'><blockquote>{{$row->judul}}</blockquote></a>
 
                         <h3><a href='#'>-{{$row->username}}</a></h3>
 
