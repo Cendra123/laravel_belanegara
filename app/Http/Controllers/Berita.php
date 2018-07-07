@@ -14,6 +14,9 @@ class Berita extends Controller
      */
     public function index()
     {
+
+
+        
         return View('berita');
     }
 

@@ -4,185 +4,145 @@
 
 <section id="page-breadcrumb">
 
-        <div class="vertical-center sun">
+  <div class="vertical-center sun">
 
-             <div class="container">
+   <div class="container">
 
-                <div class="row">
+    <div class="row">
 
-                    <div class="action">
+      <div class="action">
 
-                        <div class="col-sm-12">
+        <div class="col-sm-12">
 
-                            <h1 class="title">Berita</h1>
-
-                            <!-- <p>Blog with right sidebar</p> -->
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+          <h1 class="title">Berita</h1>
 
         </div>
 
-   </section>
+      </div>
 
-    <!--/#action-->
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!--/#action-->
 
 
 
 <section id="team" style="margin: 0;padding: 0px 0px 85px 0px;">
 
-        <div class="container">
+  <div class="container">
 
-         <!-- <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2> -->
+   <!-- <h2 class="page-header" style="color: red; text-align: center;">Web Services</h2> -->
 
-         
 
 
 
-    
 
-        <div id="testimonial-container">
 
 
+   <div id="testimonial-container">
 
 
 
-                <div class="row">
 
-                    <div class="col-md-8">
 
-                        <h2 class="page-header" style="color: red;">Berita</h2>
+    <div class="row">
 
-                        <div class="testimonial">
+      <div class="col-md-8">
 
+        <h2 class="page-header" style="color: red;">Berita</h2>
 
+        <div class="testimonial">
 
-                        <input class="form-control" id="date" style="width: 60%; margin-bottom: 15px;" name="date" placeholder="Input Tanggal Pencarian Berita" type="text"/>
 
-    
 
+          <input class="form-control" id="date" style="width: 60%; margin-bottom: 15px;" name="date" placeholder="Input Tanggal Pencarian Berita" type="text"/>
 
 
-                        <?php
+          @if($list_berita)
 
 
 
-                        if($list_berita){
+          @foreach ($list_berita as $row) 
 
+          $link = base_url().'index.php/Detail_Berita/detail_berita/'.$row->id_berita;
 
 
-                        foreach ($list_berita as $row) {
+          <div class='media'>
 
-                            # code...
+            <div class='pull-left'>
 
-                            $link = base_url().'index.php/Detail_Berita/detail_berita/'.$row->id_berita;
+              <a href='#'> <img class='img-responsive' height='150' width='150' src='".$row->featured_image."'></a>
 
+            </div>
 
 
-                            echo "<div class='media'>";
 
-                                echo "<div class='pull-left'>";
+            <div class='media-body'>
 
-                                echo "<a href='#'> <img class='img-responsive' height='150' width='150' src='".$row->featured_image."'></a>";
+              <a href='".$link."'>"."<blockquote>".$row->judul."</blockquote></a>
 
-                                echo "</div>";
+              <h3><a href='#'>-".$row->username."</a></h3>
 
+            </div>
 
 
-                                echo "<div class='media-body'>";
 
-                                echo "<a href='".$link."'>"."<blockquote>".$row->judul."</blockquote></a>";
+          </div>
 
-                                echo "<h3><a href='#'>-".$row->username."</a></h3>";
+          @endforeach
 
-                                echo "</div>";
+          @endif
 
 
+        </div>
 
-                            echo "</div>";
 
-                        }
+        <!-- <button class="btn btn-danger center-block">Selengkapnya...</button> -->
 
-                    }
+      </div>
 
-                            
 
-                        ?>
+    </div>
 
-                                
+  </div><!--/#testimonial-container-->
 
-                        </div>
 
 
+  <div class="blog-pagination">
 
-                        <!-- <button class="btn btn-danger center-block">Selengkapnya...</button> -->
 
-                    </div>
 
+    @if(isset($links))
+    $links 
+    @endif 
 
+  </div>
 
-                    
+  <!-- </div> -->
 
-                    
 
-                </div>
+</div>
 
-            </div><!--/#testimonial-container-->
+</section>
 
+<!--/#team-->
 
 
-                <div class="blog-pagination">
 
+<script type="text/javascript">
 
 
-                <!-- <h2 class="page-header" style="color: red;">Halaman</h3> -->
 
-
-
-                   
-
-                       <?php 
-
-                       if(isset($links)){
-                       echo $links; 
-                   }
-
-                       ?> 
-
-                  
-
-
-
-                      
-
-                </div>
-
-            <!-- </div> -->
-
-
-
-     </div>
-
-    </section>
-
-    <!--/#team-->
-
-
-
-    <script type="text/javascript">
-
-        
-
-    $(document).ready(function(){
+  $(document).ready(function(){
 
       var date_input=$('input[name="date"]'); //our date input has the name "date"
 
-      //var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      //var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body
 
       var options={
 
@@ -206,13 +166,13 @@
 
          // alert(date_input.val());
 
-      });
+       });
 
     })
 
-</script>
+  </script>
 
-    </script>
+</script>
 
 
 

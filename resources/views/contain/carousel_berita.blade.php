@@ -11,7 +11,7 @@
       <div id="slidey" style="display:none;">
         <ul>
             @foreach ($headline as $row)
-            <li><img  src="{{ $row->featured_image }}" ></a>
+            <li><img  src="{{ $row->featured_image }}" >
                 <p  class="title"><a style="color:#FFFFFF" href="{{ route('detailBerita', [$row->id]) }}">{{$row->judul}}</a></p>
             </li>;
             @endforeach

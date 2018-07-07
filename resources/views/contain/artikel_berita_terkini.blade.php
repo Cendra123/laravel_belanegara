@@ -53,7 +53,9 @@
 
             @if($berita_terkini)
 
+            <a href="{{ route('berita') }}">
             <button type="button" class="btn btn-danger center-block" id="tombol_berita_selengkapnya_site">Selengkapnya...</button>
+            </a>
 
             @endif
 
